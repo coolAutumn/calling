@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/calling.iml" filepath="$PROJECT_DIR$/calling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calling-client/calling-client.iml" filepath="$PROJECT_DIR$/calling-client/calling-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calling-common/calling-common.iml" filepath="$PROJECT_DIR$/calling-common/calling-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calling-remoting/calling-remoting.iml" filepath="$PROJECT_DIR$/calling-remoting/calling-remoting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calling-servicemanager/calling-servicemanager.iml" filepath="$PROJECT_DIR$/calling-servicemanager/calling-servicemanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calling-servicesrv/calling-servicesrv.iml" filepath="$PROJECT_DIR$/calling-servicesrv/calling-servicesrv.iml" />
+    </modules>
+  </component>
+</project>
