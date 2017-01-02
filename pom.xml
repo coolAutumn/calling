@@ -4,7 +4,7 @@
 
   <groupId>net.leeautumn</groupId>
   <artifactId>calling</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.1</version>
   <modules>
     <module>calling-common</module>
     <module>calling-client</module>
@@ -19,7 +19,45 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!--maven properties -->
+    <maven.test.skip>false</maven.test.skip>
+    <maven.javadoc.skip>true</maven.javadoc.skip>
+    <!-- compiler settings properties -->
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+
+    <!--Log-->
+    <slf4j.version>1.7.21</slf4j.version>
+
+    <!--Serializer-->
+    <fastjson.version>1.2.23</fastjson.version>
+
+    <!--netty-->
+    <netty.version>4.1.6.Final</netty.version>
   </properties>
+
+  <build>
+    <!--<resources>-->
+    <!--<resource>-->
+    <!--<directory>src/main/resources</directory>-->
+    <!--<filtering>false</filtering>-->
+    <!--</resource>-->
+    <!--</resources>-->
+    <plugins>
+      <!--用于多项目打包-->
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <finalName>calling</finalName>
+          <descriptors>
+            <descriptor>release-servicesrv.xml</descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 
   <dependencyManagement>
     <dependencies>
@@ -29,6 +67,32 @@
         <artifactId>junit</artifactId>
         <version>3.8.1</version>
         <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>calling-common</artifactId>
+        <version>1.0.1</version>
+      </dependency>
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>calling-remoting</artifactId>
+        <version>1.0.1</version>
+      </dependency>
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>calling-servicesrv</artifactId>
+        <version>1.0.1</version>
+      </dependency>
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>calling-client</artifactId>
+        <version>1.0.1</version>
+      </dependency>
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>calling-servicemanager</artifactId>
+        <version>1.0.1</version>
       </dependency>
 
     </dependencies>

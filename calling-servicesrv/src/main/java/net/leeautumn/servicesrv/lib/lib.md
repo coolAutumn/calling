@@ -1,0 +1,1 @@
+This package is created for users to put your dependent library into this package and the shell script can add this package to classpath.

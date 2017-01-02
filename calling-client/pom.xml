@@ -3,7 +3,7 @@
     <parent>
         <artifactId>calling</artifactId>
         <groupId>net.leeautumn</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -18,6 +18,14 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>net.leeautumn</groupId>
+            <artifactId>calling-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.leeautumn</groupId>
+            <artifactId>calling-remoting</artifactId>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
