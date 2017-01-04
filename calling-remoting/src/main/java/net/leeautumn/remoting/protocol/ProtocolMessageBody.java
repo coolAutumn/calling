@@ -14,21 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.leeautumn;
+package net.leeautumn.remoting.protocol;
+
+import net.leeautumn.remoting.rpc.RPCRequest;
+import net.leeautumn.remoting.rpc.RPCResponse;
 
 /**
- * Created by LeeAutumn on 30/12/2016.
+ * Created by LeeAutumn on 04/01/2017.
  * blog: leeautumn.net
  *
- * @author LeeAutumn
+ * @autuor : LeeAutumn
  */
-public abstract class Client {
+public interface ProtocolMessageBody {
+    /**
+     * 获得RPCRequest
+     */
+    RPCRequest getRPCRequest();
+    void setRPCRequest(RPCRequest rpcRequest);
 
-    public void sendRequest(){
-
-    }
-
-    public void getResponse(){
-
-    }
+    /**
+     * 获得RPCResponse
+     */
+    RPCResponse getRPCResponse();
+    void setRPCResponse(RPCResponse rpcResponse);
 }

@@ -3,14 +3,14 @@
     <parent>
         <artifactId>calling</artifactId>
         <groupId>net.leeautumn</groupId>
-        <version>1.0.2</version>
+        <version>1.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>calling-servicesrv</artifactId>
+    <artifactId>calling-services</artifactId>
     <packaging>jar</packaging>
 
-    <name>calling-servicesrv</name>
+    <name>calling-services</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -19,29 +19,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>net.leeautumn</groupId>
-            <artifactId>calling-common</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>net.leeautumn</groupId>
-            <artifactId>calling-remoting</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-
-
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>${netty.version}</version>
         </dependency>
     </dependencies>
 </project>

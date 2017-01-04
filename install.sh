@@ -27,4 +27,5 @@ else
 #   setup the servicesrv moudle
     cd devenv
     ln -s ../target/calling-servicesrv/calling-servicesrv servicesrv-devenv
+    ln -s ../target/calling-client/calling-client client
 fi

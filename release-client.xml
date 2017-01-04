@@ -17,8 +17,8 @@
   -->
 
 <assembly>
-    <id>servicesrv</id>
-    <baseDirectory>calling-servicesrv</baseDirectory>
+    <id>client</id>
+    <baseDirectory>calling-client</baseDirectory>
     <formats>
         <format>dir</format>
         <format>tar.gz</format>
@@ -30,11 +30,11 @@
             </includes>
         </fileSet>
         <fileSet>
-            <directory>resources/servicesrv</directory>
+            <directory>resources/client</directory>
             <outputDirectory>lib/</outputDirectory>
         </fileSet>
         <fileSet>
-            <directory>bin/servicesrv/</directory>
+            <directory>bin/client/</directory>
             <outputDirectory>bin/</outputDirectory>
         </fileSet>
     </fileSets>
@@ -45,7 +45,7 @@
             <includes>
                 <include>net.leeautumn:calling-common</include>
                 <include>net.leeautumn:calling-remoting</include>
-                <include>net.leeautumn:calling-servicesrv</include>
+                <include>net.leeautumn:calling-client</include>
                 <include>net.leeautumn:calling-services</include>
             </includes>
             <binaries>

@@ -40,7 +40,6 @@ public enum Code {
 
     /*between client and serviceprovider*/
     CALL_SERVICE(3340,"Call_Service"),
-
     HELLO_SERVICE(3341,"Hello_Service"),
 
 

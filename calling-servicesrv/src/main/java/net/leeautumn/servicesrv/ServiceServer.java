@@ -27,12 +27,12 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 import net.leeautumn.common.constants.Constant;
 import net.leeautumn.servicesrv.config.ServiceServerConfig;
-import net.leeautumn.remoting.protocol.Code;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import net.leeautumn.servicesrv.channelhandler.ProcessRequestHandler;
 
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,7 +51,8 @@ public class ServiceServer
 
     private static Logger logger = LoggerFactory.getLogger(Constant.SERVICE_SERVER_LOGGERNAME);
 
-    protected Map<Code,ServiceProvider> registeredServiceProvider = new HashMap<Code, ServiceProvider>();
+    //这个Map key : 就是service.class.name
+    protected Map<String,Object> registeredServices = new HashMap<String, Object>();
 
     private void init() {
         try {
@@ -67,7 +68,7 @@ public class ServiceServer
             logger.info("Service server start at the port {}",ServiceServerConfig.getConfig("serviceserver.port"));
 
             //register the service provider
-            RegisterSupporter.register(registeredServiceProvider);
+            RegisterSupporter.register(registeredServices);
 
             //waiting for the close
             f.channel().closeFuture().sync();
@@ -84,7 +85,7 @@ public class ServiceServer
 
         @Override
         protected void initChannel(SocketChannel socketChannel) throws Exception {
-            socketChannel.pipeline().addLast(new ProcessRequestHandler(registeredServiceProvider));
+            socketChannel.pipeline().addLast(new ProcessRequestHandler(registeredServices));
         }
     }
 

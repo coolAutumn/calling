@@ -16,6 +16,7 @@
  */
 package net.leeautumn.servicesrv;
 
+import net.leeautumn.common.annotation.services.ServicesAn;
 import net.leeautumn.common.annotation.servicesrv.ServiceProviderAn;
 import net.leeautumn.common.constants.Constant;
 import net.leeautumn.common.util.loadclass.LoadClasses;
@@ -45,33 +46,27 @@ public class RegisterSupporter {
     private static ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 
     //通过扫描配置中的包来找到注解,并且进行注册ServiceProvider
-    public static void register(Map<Code,ServiceProvider> registeredServiceProvider){
-        String serviceProviderPackagePath = ServiceServerConfig.getConfig("serviceProviderPackagePath");
+    public static void register(Map<String,Object> registeredServices){
+
+        String serviceProviderPackagePath = ServiceServerConfig.getConfig("servicesPackagePath");
 
         //根据包名来获得相关的class
-        List<Class<?>> classlist= LoadClasses.getClassByPkgName("net.leeautumn.servicesrv.providers",true,classLoader);
+        List<Class<?>> serviceImpllist = LoadClasses.getClassByPkgName("net.leeautumn.services.servicesImpl",true,classLoader);
 
-        findProviderClasses(classlist,registeredServiceProvider);
+        findProviderClasses(serviceImpllist,registeredServices);
 
     }
 
-    private static void findProviderClasses(List<Class<?>> classlist,Map<Code,ServiceProvider> registeredServiceProvider) {
-        for (Class<?> clazz : classlist) {
+    private static void findProviderClasses(List<Class<?>> servicelist,Map<String,Object> registeredServices) {
+        for (Class<?> clazz : servicelist) {
             try {
-                ServiceProvider serviceProvider = (ServiceProvider) clazz.newInstance();
+                Object serviceImpl = clazz.newInstance();
 
-                if(clazz.isAnnotationPresent(ServiceProviderAn.class)) {
-                    ServiceProviderAn serviceProviderAn = clazz.getAnnotation(ServiceProviderAn.class);
+//                ServicesAn servicesAn = clazz.getAnnotation(ServicesAn.class);
 
-                    serviceProvider.setCode(serviceProviderAn.requestCode());
-                    serviceProvider.setProtocolType(serviceProviderAn.protocolType());
-                    serviceProvider.setProtocolSerializer(ProtocolType.getSerializerByType(serviceProviderAn.protocolType()));
+                registeredServices.put(clazz.getInterfaces()[0].getName(), serviceImpl);
 
-
-                    registeredServiceProvider.put(serviceProviderAn.requestCode(), serviceProvider);
-
-                    logger.info("Succeed register service provider : {}", serviceProviderAn.requestCode().getCodeMeaning());
-                }
+                logger.info("Succeed register service : {}", clazz.getInterfaces()[0].getName());
             }catch (InstantiationException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {

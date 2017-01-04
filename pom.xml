@@ -4,13 +4,14 @@
 
   <groupId>net.leeautumn</groupId>
   <artifactId>calling</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <modules>
     <module>calling-common</module>
     <module>calling-client</module>
     <module>calling-servicesrv</module>
     <module>calling-remoting</module>
     <module>calling-servicemanager</module>
+    <module>calling-services</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -52,6 +53,7 @@
           <finalName>calling</finalName>
           <descriptors>
             <descriptor>release-servicesrv.xml</descriptor>
+            <descriptor>release-client.xml</descriptor>
           </descriptors>
         </configuration>
       </plugin>
@@ -72,27 +74,32 @@
       <dependency>
         <groupId>net.leeautumn</groupId>
         <artifactId>calling-common</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
       </dependency>
       <dependency>
         <groupId>net.leeautumn</groupId>
         <artifactId>calling-remoting</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
       </dependency>
       <dependency>
         <groupId>net.leeautumn</groupId>
         <artifactId>calling-servicesrv</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
       </dependency>
       <dependency>
         <groupId>net.leeautumn</groupId>
         <artifactId>calling-client</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
       </dependency>
       <dependency>
         <groupId>net.leeautumn</groupId>
         <artifactId>calling-servicemanager</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>net.leeautumn</groupId>
+        <artifactId>calling-services</artifactId>
+        <version>1.0.2</version>
       </dependency>
 
     </dependencies>

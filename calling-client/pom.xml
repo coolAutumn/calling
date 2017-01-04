@@ -3,7 +3,7 @@
     <parent>
         <artifactId>calling</artifactId>
         <groupId>net.leeautumn</groupId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,12 +20,18 @@
     <dependencies>
         <dependency>
             <groupId>net.leeautumn</groupId>
+            <artifactId>calling-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.leeautumn</groupId>
             <artifactId>calling-common</artifactId>
         </dependency>
         <dependency>
             <groupId>net.leeautumn</groupId>
             <artifactId>calling-remoting</artifactId>
         </dependency>
+
+        <!--External dependecides-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

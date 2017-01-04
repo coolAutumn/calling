@@ -16,22 +16,48 @@
  */
 package net.leeautumn.remoting.protocol;
 
+import java.util.Map;
+
 /**
  * Created by LeeAutumn on 04/01/2017.
  * blog: leeautumn.net
  *
  * @autuor : LeeAutumn
  */
-public interface ProtocolMessage {
+public interface ProtocolMessageHeader {
     /**
-     * 获得消息头
+     * 获取协议号
      */
-    ProtocolMessageHeader getHeader();
-    void setHeader(ProtocolMessageHeader protocolMessageHeader);
+    byte getProtocolType();
+    void setProtocolType(byte protocolType);
 
     /**
-     * 获得消息体
+     * 获取消息类型 request or response
      */
-    ProtocolMessageBody getBody();
-    void setBody(ProtocolMessageBody protocolMessageBody);
+    byte getMessageType();
+    void setMessageType(byte type);
+
+    /**
+     * 获取协议主版本
+     */
+    byte getVersion();
+    void setVersion(byte version);
+
+    /**
+     * 获得协议子版本号
+     */
+    byte getMinorVersion();
+    void setMinorVersion(byte minorVersion);
+
+    /**
+     * 获得协议 attachment size
+     */
+    int getAttachmentSize();
+    void setAttachmentSize(int size);
+
+    /**
+     * 获得协议 attachment
+     */
+    Map<String,Object> getAttachment();
+    void setAttachment(Map<String,Object> attachment);
 }

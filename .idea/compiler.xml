@@ -26,6 +26,7 @@
         <module name="calling-common" />
         <module name="calling-remoting" />
         <module name="calling-servicemanager" />
+        <module name="calling-services" />
         <module name="calling-servicesrv" />
       </profile>
     </annotationProcessing>
@@ -35,6 +36,7 @@
       <module name="calling-common" target="1.6" />
       <module name="calling-remoting" target="1.6" />
       <module name="calling-servicemanager" target="1.6" />
+      <module name="calling-services" target="1.6" />
       <module name="calling-servicesrv" target="1.6" />
     </bytecodeTargetLevel>
   </component>

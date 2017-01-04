@@ -16,6 +16,7 @@
  */
 package net.leeautumn.remoting.protocol;
 
+import net.leeautumn.remoting.protocol.callingprotocol.CallingProtocolMessage;
 import net.leeautumn.remoting.protocol.callingprotocol.CallingProtocolSerializer;
 
 /**
@@ -39,6 +40,24 @@ public enum ProtocolType {
         switch (type){
             case CallingProtocol:
                 return new CallingProtocolSerializer();
+            default:
+                return null;
+        }
+    }
+
+    public static Class<?> getMessageClassByType(ProtocolType type){
+        switch (type){
+            case CallingProtocol:
+                return CallingProtocolMessage.class;
+            default:
+                return null;
+        }
+    }
+
+    public static ProtocolType getProtocolTypeByByte(byte b){
+        switch (b){
+            case (byte)0xCA:
+                return CallingProtocol;
             default:
                 return null;
         }

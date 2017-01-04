@@ -14,24 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.leeautumn.remoting.protocol;
+package net.leeautumn.services.servicesImpl;
+
+import net.leeautumn.services.services.HelloService;
 
 /**
- * Created by LeeAutumn on 04/01/2017.
+ * Created by LeeAutumn on 03/01/2017.
  * blog: leeautumn.net
  *
  * @autuor : LeeAutumn
  */
-public interface ProtocolMessage {
-    /**
-     * 获得消息头
-     */
-    ProtocolMessageHeader getHeader();
-    void setHeader(ProtocolMessageHeader protocolMessageHeader);
-
-    /**
-     * 获得消息体
-     */
-    ProtocolMessageBody getBody();
-    void setBody(ProtocolMessageBody protocolMessageBody);
+public class HelloServiceImpl implements HelloService{
+    @Override
+    public String sayHello(String name) {
+        return "Hello "+name;
+    }
 }
