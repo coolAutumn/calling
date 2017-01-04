@@ -17,6 +17,7 @@
 package net.leeautumn.remoting.protocol.callingprotocol;
 
 import net.leeautumn.remoting.protocol.Code;
+import net.leeautumn.remoting.protocol.ProtocolMessageHeader;
 
 import java.util.Map;
 
@@ -26,12 +27,10 @@ import java.util.Map;
  *
  * @author LeeAutumn
  */
-public class CallingProtocolHeader {
+public class CallingProtocolMessageHeader implements ProtocolMessageHeader{
     public byte protocolType = (byte)0xCA;      //CallingProtocol的协议标识
 
     public byte type = 0x00;
-
-    public Code code = Code.CALL_SERVICE;
 
     public byte version = CallingProtocolMessage.version;
 
@@ -40,4 +39,64 @@ public class CallingProtocolHeader {
     public int  attachmentSize = 0;
 
     public Map<String,Object> attachment = null;
+
+    @Override
+    public byte getProtocolType() {
+        return protocolType;
+    }
+
+    @Override
+    public byte getMessageType() {
+        return type;
+    }
+
+    @Override
+    public byte getVersion() {
+        return version;
+    }
+
+    @Override
+    public byte getMinorVersion() {
+        return minorVersion;
+    }
+
+    @Override
+    public int getAttachmentSize() {
+        return attachmentSize;
+    }
+
+    @Override
+    public Map<String, Object> getAttachment() {
+        return attachment;
+    }
+
+    @Override
+    public void setProtocolType(byte protocolType) {
+        this.protocolType = protocolType;
+    }
+
+    @Override
+    public void setMessageType(byte type) {
+        this.type = type;
+    }
+
+    @Override
+    public void setVersion(byte version) {
+        this.version = version;
+    }
+
+    @Override
+    public void setMinorVersion(byte minorVersion) {
+        this.minorVersion = minorVersion;
+    }
+
+    @Override
+    public void setAttachmentSize(int size) {
+        this.attachmentSize = size;
+    }
+
+    @Override
+    public void setAttachment(Map<String, Object> attachment) {
+        this.attachment = attachment;
+    }
 }
