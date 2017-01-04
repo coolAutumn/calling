@@ -17,6 +17,8 @@
 package net.leeautumn.remoting.protocol.callingprotocol;
 
 import net.leeautumn.remoting.protocol.ProtocolMessage;
+import net.leeautumn.remoting.protocol.ProtocolMessageBody;
+import net.leeautumn.remoting.protocol.ProtocolMessageHeader;
 
 /**
  * Created by LeeAutumn on 24/12/2016.
@@ -24,29 +26,34 @@ import net.leeautumn.remoting.protocol.ProtocolMessage;
  *
  * @author LeeAutumn
  */
-public class CallingProtocolMessage extends ProtocolMessage {
+public class CallingProtocolMessage implements ProtocolMessage{
 
     public static byte version      =   (byte) 0x01;        //version : 1
 
-    public static byte minorVersion   =   (byte) 0x01;        //minor version : 1
+    public static byte minorVersion   =   (byte) 0x02;        //minor version : 2
 
-    public CallingProtocolHeader header;
+    public ProtocolMessageHeader header;
 
-    public CallingProtocolBody body;
+    public ProtocolMessageBody body;
 
-    public CallingProtocolHeader getHeader() {
+    public CallingProtocolMessage(){
+        this.header = new CallingProtocolMessageHeader();
+        this.body = new CallingProtocolMessageBody();
+    }
+
+    public ProtocolMessageHeader getHeader() {
         return header;
     }
 
-    public void setHeader(CallingProtocolHeader header) {
-        this.header = header;
+    public void setHeader(ProtocolMessageHeader header) {
+        this.header =  header;
     }
 
-    public CallingProtocolBody getBody() {
+    public ProtocolMessageBody getBody() {
         return body;
     }
 
-    public void setBody(CallingProtocolBody body) {
+    public void setBody(ProtocolMessageBody body) {
         this.body = body;
     }
 
