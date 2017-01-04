@@ -17,8 +17,7 @@
 package net.leeautumn.remoting.protocol.callingprotocol;
 
 import com.alibaba.fastjson.JSON;
-import net.leeautumn.remoting.protocol.ProtocolMessage;
-import net.leeautumn.remoting.protocol.ProtocolSerializer;
+import net.leeautumn.remoting.protocol.*;
 
 import java.nio.charset.Charset;
 
@@ -28,12 +27,13 @@ import java.nio.charset.Charset;
  *
  * @author LeeAutumn
  */
-public class CallingProtocolSerializer implements ProtocolSerializer {
+public class CallingProtocolSerializer extends AbstractProtocolSerializer {
 
     public final static Charset CHARSET_UTF8 = Charset.forName("UTF-8");
 
     @Override
-    public byte[] serializeMessage(final Object protocolMessage) {
+    public byte[] serializeRealMessage(final Object protocolMessage) {
+
         final String json = toJson(protocolMessage, false);
         if (json != null) {
             return json.getBytes(CHARSET_UTF8);
@@ -54,5 +54,6 @@ public class CallingProtocolSerializer implements ProtocolSerializer {
     public static <T> T fromJson(String json, Class<T> classOfT) {
         return JSON.parseObject(json, classOfT);
     }
+
 
 }
