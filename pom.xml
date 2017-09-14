@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>net.moopa.calling</groupId>
+  <groupId>net.moopa3376.calling</groupId>
   <artifactId>calling-all</artifactId>
   <version>1.0.2</version>
   <modules>
@@ -17,7 +17,19 @@
   <packaging>pom</packaging>
 
   <name>calling</name>
-  <url>http://maven.apache.org</url>
+  <url>https://github.com/moopa3376/calling</url>
+  <description>self designed RPC framework</description>
+
+  <developers>
+    <developer>
+      <name>moopa3376</name>
+      <email>moopa3376@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <url>https://github.com/moopa3376/calling.git</url>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -74,34 +86,34 @@
       </dependency>
 
       <dependency>
-        <groupId>net.moopa</groupId>
+        <groupId>net.moopa3376.calling</groupId>
         <artifactId>calling-common</artifactId>
-        <version>1.0.2</version>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>net.moopa</groupId>
+        <groupId>net.moopa3376.calling</groupId>
         <artifactId>calling-remoting</artifactId>
-        <version>1.0.2</version>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>net.moopa</groupId>
+        <groupId>net.moopa3376.calling</groupId>
         <artifactId>calling-servicesrv</artifactId>
-        <version>1.0.2</version>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>net.moopa</groupId>
+        <groupId>net.moopa3376.calling</groupId>
         <artifactId>calling-client</artifactId>
-        <version>1.0.2</version>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>net.moopa</groupId>
+        <groupId>net.moopa3376.calling</groupId>
         <artifactId>calling-servicemanager</artifactId>
-        <version>1.0.2</version>
+        <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>net.moopa</groupId>
+        <groupId>net.moopa3376.calling</groupId>
         <artifactId>calling-services</artifactId>
-        <version>1.0.2</version>
+        <version>${project.version}</version>
       </dependency>
 
     </dependencies>
