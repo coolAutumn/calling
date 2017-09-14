@@ -43,10 +43,10 @@
     <moduleSets>
         <moduleSet>
             <includes>
-                <include>net.leeautumn:calling-common</include>
-                <include>net.leeautumn:calling-remoting</include>
-                <include>net.leeautumn:calling-client</include>
-                <include>net.leeautumn:calling-services</include>
+                <include>net.moopa3376.calling:calling-common</include>
+                <include>net.moopa3376.calling:calling-remoting</include>
+                <include>net.moopa3376.calling:calling-client</include>
+                <include>net.moopa3376.calling:calling-services</include>
             </includes>
             <binaries>
                 <outputDirectory>lib/</outputDirectory>
