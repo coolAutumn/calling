@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-cd devenv/servicesrv-devenv/bin
+cd devenv/servicesrv/bin
 sh ./servicesrv-start.sh

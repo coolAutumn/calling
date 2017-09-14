@@ -29,7 +29,6 @@ export JAVA_HOME
 export JAVA="$JAVA_HOME/bin/java"
 export BASE_DIR=$(dirname $0)/..
 export CLASSPATH=.:${BASE_DIR}/lib:${CLASSPATH}
-echo $CLASSPATH
 
 #===========================================================================================
 # JVM Configuration

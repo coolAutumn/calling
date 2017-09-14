@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>calling</artifactId>
-        <groupId>net.leeautumn</groupId>
+        <artifactId>calling-all</artifactId>
+        <groupId>net.moopa.calling</groupId>
         <version>1.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -19,16 +19,19 @@
 
     <dependencies>
         <dependency>
-            <groupId>net.leeautumn</groupId>
+            <groupId>net.moopa.calling</groupId>
             <artifactId>calling-services</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>net.leeautumn</groupId>
+            <groupId>net.moopa.calling</groupId>
             <artifactId>calling-common</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>net.leeautumn</groupId>
+            <groupId>net.moopa.calling</groupId>
             <artifactId>calling-remoting</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <!--External dependecides-->
